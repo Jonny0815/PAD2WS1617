@@ -1,0 +1,24 @@
+#pragma once
+#include "Ingredient.h"
+#ifndef Dispenser_h
+#define Dispenser_h
+class Dispenser
+{
+public:
+
+	//setter
+	void set_number(int);
+	void set_ingredient(Ingredient*);
+
+	//getter
+	unsigned int get_number();
+	Ingredient* get_ingredient();
+
+private:
+
+	unsigned int number = 0;
+	Ingredient* ingredient = NULL;
+
+};
+
+#endif
