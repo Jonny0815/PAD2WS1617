@@ -9,11 +9,11 @@ public:
 
 	//setter
 	void set_name(std::string);
-	void set_ingredients(Ingredient*[]);
+	void set_ingredients(std::vector<Ingredient>);
 
 	//getter
 	std::string get_name();
-	Ingredient get_ingredients();
+	std::vector<Ingredient> get_ingredients();
 
 	//wörk
 	void print();
@@ -21,8 +21,7 @@ public:
 private:
 
 	std::string name;
-	//TODO vector ingredient 
-
+	std::vector<Ingredient> ingredients;
 };
 
 #endif

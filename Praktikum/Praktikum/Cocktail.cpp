@@ -9,9 +9,9 @@ void Cocktail::set_name(string nam_h) {
 
 }
 
-void Cocktail::set_ingredients(Ingredient* ing_h[]) {
+void Cocktail::set_ingredients(vector<Ingredient> vinc) {
 
-	//TODO
+	ingredients = vinc;
 
 }
 
@@ -23,9 +23,9 @@ string Cocktail::get_name() {
 
 }
 
-Ingredient Cocktail::get_ingredients() {
+vector<Ingredient> Cocktail::get_ingredients() {
 
-	return; //TODO
+	return ingredients;
 
 }
 
