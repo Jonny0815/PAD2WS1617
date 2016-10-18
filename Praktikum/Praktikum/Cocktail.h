@@ -17,6 +17,8 @@ public:
 
 	//wörk
 	void print();
+	void push_ingredient(Ingredient);
+
 
 private:
 

@@ -1,4 +1,10 @@
 #pragma once
+
+#include "CC_menu.h"
+#include "MC_menu.h"
+#include "Cocktail.h"
+#include "Ingredient.h"
+
 #ifndef Menu_h
 #define Menu_h
 

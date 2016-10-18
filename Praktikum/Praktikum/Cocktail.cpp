@@ -33,6 +33,17 @@ void Cocktail::print() {
 
 	cout << "== Cocktail ==" << endl;
 	cout << name;
-	//TODO
+	
+	for (size_t i = 0; i < ingredients.size(); i++)
+	{
+		cout << "=> " << ingredients.at(i).get_name() << endl;
+	}
+
+}
+
+
+void Cocktail::push_ingredient(Ingredient ing_h) {
+
+	ingredients.push_back(ing_h);
 
 }

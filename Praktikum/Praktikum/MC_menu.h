@@ -1,4 +1,5 @@
 #pragma once
+#include "Cocktail.h"
 #ifndef MC_menu_h
 #define MC_menu_h
 
