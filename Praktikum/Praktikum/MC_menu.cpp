@@ -8,7 +8,9 @@ using namespace std;
 
 void MC_menu::print() {
 
-
+/*
+	
+	//Cocktail Dummy
 
 	Cocktail* c1 = new Cocktail;
 	Ingredient* i1 = new Ingredient;
@@ -23,15 +25,14 @@ void MC_menu::print() {
 	c1->push_ingredient(*i2);
 	c1->push_ingredient(*i3);
 
-
+	*/
 
 	do
 	{
 
 
 		cout << "== CocktailMix | Mix it ==" << endl;
-		cout << "1 - Screwdriver" << endl;
-		cout << "2 - Tequila Sunrise" << endl;
+		
 		cout << "0 - Exit " << endl;
 		cout << "Choice: ";
 		cin >> menu_select;
@@ -50,7 +51,7 @@ void MC_menu::print() {
 
 		case 2:
 
-			c1->print();
+			
 
 			break;
 

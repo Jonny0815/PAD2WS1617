@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="CC_menu.h" />
     <ClInclude Include="Cocktail.h" />
+    <ClInclude Include="CocktailMachine.h" />
     <ClInclude Include="Dispenser.h" />
     <ClInclude Include="Ingredient.h" />
     <ClInclude Include="MC_menu.h" />
@@ -156,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cocktail.cpp" />
+    <ClCompile Include="CocktailMachine.cpp" />
     <ClCompile Include="Dispenser.cpp" />
     <ClCompile Include="Ingredient.cpp" />
     <ClCompile Include="MC_menu.cpp" />

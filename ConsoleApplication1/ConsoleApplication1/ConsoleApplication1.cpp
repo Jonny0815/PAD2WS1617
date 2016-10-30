@@ -1,50 +1,55 @@
-#include "stdafx.h"
+
+
+#include <fstream>
 #include <iostream>
-#include <string>
-#include <vector>
 
 
-using namespace std;
+
+class Something
+{
+public:
+	int weight;
+	int size;
+
+	// Insertion operator
+	friend std::ostream& operator<<(std::ostream& os, const Something& s)
+	{
+		// write out individual members of s with an end of line between each one
+		os << s.weight << '\n';
+		os << s.size;
+		return os;
+	}
+
+	// Extraction operator
+	friend std::istream& operator >> (std::istream& is, Something& s)
+	{
+		// read in individual members of s
+		is >> s.weight >> s.size;
+		return is;
+	}
+};
 
 int main()
- {
+{
+	Something s1;
+	Something s2;
 
-	vector<int> v1(3, 1);
-	vector<int> v2(3, -1);
+	s1.weight = 4;
+	s1.size = 9;
 
-	v2.push_back(3);
-	v2.pop_back();
+	std::ofstream ofs("saved.txt");
 
+	ofs << s1; // store the object to file
+	ofs.close();
 
+	std::ifstream ifs("saved.txt");
 
-	for (size_t i = 0; i < v2.size(); i++)
-	{
-		cout << "index " << i << "=> " << v2[i] << endl;
-	}
+	// read the object back in
+	ifs >> s2;
 	
-	cout << "Empty => " << v2.empty() << endl;
-	cout << "Max_Size => " << v2.max_size() << endl;
-	cout << "Size => " << v2.size() << endl;
-
-
-
-	v2.insert(v2.end(), v1.begin(), v1.end());
-
-
-
-	cout << "----------------------------" << endl;
-	for (size_t i = 0; i < v2.size(); i++)
-	{
-		cout << "index " << i << "=> " << v2[i] << endl;
-	}
-
-	cout << "Empty => " << v2.empty() << endl;
-	cout << "Max_Size => " << v2.max_size() << endl;
-	cout << "Size => " << v2.size() << endl;
-
+		// read was successful therefore s2 is valid
+		std::cout << s2 << '\n'; // print s2 to console
+	
 
 	return 0;
-
-
-
 }

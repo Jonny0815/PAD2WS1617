@@ -10,6 +10,14 @@
 
 using namespace std;
 
+//constructor
+
+Menu::Menu(CocktailMachine* cm_h) {
+
+	this->cm = cm_h;
+
+
+}
 
 // menu print out
 void Menu::print() {
@@ -22,7 +30,7 @@ void Menu::print() {
 	{
 
 
-		cout << "== CocktailMix | V0.1 ==" << endl;
+		cout << "== CocktailMix | V0.2 ==" << endl;
 		cout << "1 - Make Cocktails" << endl;
 		cout << "2 - Configure CocktailMix" << endl;
 		cout << "0 - Exit " << endl;
@@ -60,5 +68,5 @@ void Menu::print() {
 		
 	} while (menu_select != 0);
 
-
+	
 }
