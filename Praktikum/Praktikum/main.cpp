@@ -15,7 +15,7 @@ int main()
 	Menu menu(cm_p);
 	menu.print();
 
-	
+	delete cm_p;
 	
 	
 	
