@@ -27,12 +27,6 @@
     <ClInclude Include="Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MC_menu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CC_menu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Ingredient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -51,12 +45,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Menu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MC_menu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CC_menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">

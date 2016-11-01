@@ -145,12 +145,10 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CC_menu.h" />
     <ClInclude Include="Cocktail.h" />
     <ClInclude Include="CocktailMachine.h" />
     <ClInclude Include="Dispenser.h" />
     <ClInclude Include="Ingredient.h" />
-    <ClInclude Include="MC_menu.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -160,10 +158,8 @@
     <ClCompile Include="CocktailMachine.cpp" />
     <ClCompile Include="Dispenser.cpp" />
     <ClCompile Include="Ingredient.cpp" />
-    <ClCompile Include="MC_menu.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="CC_menu.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

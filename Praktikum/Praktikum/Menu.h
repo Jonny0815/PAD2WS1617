@@ -1,7 +1,6 @@
 #pragma once
 
-#include "CC_menu.h"
-#include "MC_menu.h"
+
 #include "Cocktail.h"
 #include "Ingredient.h"
 #include "CocktailMachine.h"
@@ -9,22 +8,58 @@
 #ifndef Menu_h
 #define Menu_h
 
-class Menu {
-	
-
+class Menu
+{
 	friend class CocktailMachine;
 
 public:
-	void print();
 	Menu(CocktailMachine* cm_h);
-
+	~Menu();
+	virtual void print();
 
 private:
-	int menu_select = -1;
 	CocktailMachine* cm;
-
-
+	int menu_select = -1;
 
 };
+
+
+
+
+class MainMenu: public Menu
+{
+public:
+	MainMenu();
+	~MainMenu();
+
+private:
+	
+};
+
+
+
+
+class ConfigureMenu: public Menu
+{
+public:
+	ConfigureMenu();
+	~ConfigureMenu();
+
+private:
+
+};
+
+
+
+class MakeMenu: public Menu
+{
+public:
+	MakeMenu();
+	~MakeMenu();
+
+private:
+
+};
+
 
 #endif
