@@ -9,24 +9,18 @@ using namespace std;
 CocktailMachine::CocktailMachine()
 {
 
+	fstream file("CocktailMachine.bin", ios::binary | ios::in | ios::out | ios::trunc);
+	file.read((char *) this, sizeof(CocktailMachine));
+	file.close;
 
-	
-
-	ifstream ifs("saved.txt");
-
-	// read the object back in
-	ifs >> *this;
 
 }
 
 CocktailMachine::~CocktailMachine()
 {
-
-	ofstream ofs("saved.txt");
-
-	ofs << this; // store the object to file
-	ofs.close();
-
+	fstream file("CocktailMachine.bin", ios::binary | ios::in | ios::out | ios::trunc);
+	file.write((char *) this, sizeof(CocktailMachine));
+	file.close;
 
 }
 

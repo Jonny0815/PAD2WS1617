@@ -34,25 +34,7 @@ public:
 	void printMenu();
 
 
-	//saven & load, credits to http://www.cplusplus.com/forum/beginner/49924/
-
-
-	// Insertion operator
-	friend std::ostream& operator<<(std::ostream& os, const CocktailMachine& s)
-	{
-		// write out individual members of s with an end of line between each one
-		os << s.dispensers << '\n';
-		os << s.cocktails;
-		return os;
-	}
-
-	// Extraction operator
-	friend std::istream& operator >> (std::istream& is, CocktailMachine& s)
-	{
-		// read in individual members of s
-		is >> s.dispensers >> s.cocktails;
-		return is;
-	}
+	
 
 
 
