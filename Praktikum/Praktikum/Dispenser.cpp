@@ -1,6 +1,7 @@
 #include "stdafx.h"
-
 #include "Dispenser.h"
+
+using namespace std;
 
 void Dispenser::set_ingredient(Ingredient* ing_h) {
 
@@ -24,3 +25,4 @@ Ingredient* Dispenser::get_ingredient() {
 
 	return ingredient;
 }
+

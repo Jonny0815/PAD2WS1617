@@ -19,6 +19,7 @@ public:
 	void MakeMenu_print();
 	void ConfigureMenu_print();
 	void DispenserMenu_print();
+	void AddIngMenu_print();
 
 private:
 	CocktailMachine* cm;

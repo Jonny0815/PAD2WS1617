@@ -11,8 +11,8 @@ int main()
 {
 	
 
-
-
+	
+	
 	Cocktail* c1 = new Cocktail;
 	Cocktail* c2 = new Cocktail;
 	Ingredient* i1 = new Ingredient;
@@ -32,8 +32,8 @@ int main()
 	c2->push_ingredient(*i1);
 	c2->push_ingredient(*i2);
 	c2->push_ingredient(*i3);
-
-
+	
+	
 	CocktailMachine* cm_p = new CocktailMachine;
 	
 	cm_p->push_Cocktail(c1);

@@ -1,7 +1,7 @@
-#pragma once
-#include "Ingredient.h"
 #ifndef Dispenser_h
 #define Dispenser_h
+#include "Ingredient.h"
+
 class Dispenser
 {
 public:
@@ -13,6 +13,8 @@ public:
 	//getter
 	unsigned int get_number();
 	Ingredient* get_ingredient();
+
+
 
 private:
 

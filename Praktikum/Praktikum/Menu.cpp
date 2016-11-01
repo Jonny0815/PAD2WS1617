@@ -82,7 +82,7 @@ void Menu::MakeMenu_print() {
 		{
 			for (size_t i = 0; i < cm->cocktails.size(); i++)
 			{
-				int j = i + 1;
+				size_t j = i + 1;
 
 				cout << j << " - " << cm->cocktails.at(i)->get_name() << endl;
 				
@@ -94,7 +94,7 @@ void Menu::MakeMenu_print() {
 
 		}
 		
-		
+
 		cout << "0 - Exit " << endl;
 		cout << "Choice: ";
 		cin >> menu_select;
@@ -131,6 +131,8 @@ void Menu::ConfigureMenu_print() {
 		cout << "3 - Add Cocktail" << endl;
 		cout << "4 - Edit Cocktail" << endl;
 		cout << "5 - Delete Cocktail" << endl;
+		cout << "6 - Add Ingredient" << endl;
+		cout << "7 - Delete Ingredient" << endl;
 		cout << "0 - Exit " << endl;
 		cout << "Choice: ";
 		cin >> menu_select;
@@ -158,6 +160,8 @@ void Menu::ConfigureMenu_print() {
 
 		case 6:
 
+			AddIngMenu_print();
+
 			break;
 
 		default:
@@ -171,29 +175,51 @@ void Menu::ConfigureMenu_print() {
 }
 
 
-void Menu::DispenserMenu_print() {  //TODO
+void Menu::DispenserMenu_print() {  
 
 	do {
 
 		system("cls");
 
-		//sort(cm->dispensers.begin(), cm->dispensers.end());
-
 		cout << "== CocktailMix | Configure Dispenser ==" << endl;
 
-		for (size_t i = 0; i < 5; i++)
+		for (size_t i = 0; i < 6; i++)
 		{
 
-
-
-
-
-			cout << i++ << " - " << cm->dispensers.at(i) << endl;
+			cout << cm->dispensers.at(i)->get_number() << " - ";
+			
+			if (cm->dispensers.at(i)->get_ingredient() != NULL)
+			{
+				cout << cm->dispensers.at(i)->get_ingredient()->get_name() << endl;
+			}
+			else {
+				cout << "Free" << endl;
+			}
 		}
 
 		cout << "0 - Exit " << endl;
 		cout << "Choice: ";
 		cin >> menu_select;
+		system("cls");
+
+		if (menu_select > 0 && menu_select < 7) {
+
+			for (size_t i = 0; i < cm->ingredients.size(); i++)
+			{
+			cm->ingredients.at(i)->get_name();
+
+			}
+
+			cout << "0 - Exit " << endl;
+			menu_select = -1;
+			cout << "Choice: ";
+			cin >> menu_select;
+
+
+
+		}
+		 
+
 		system("cls");
 
 
@@ -204,6 +230,25 @@ void Menu::DispenserMenu_print() {  //TODO
 	} while (menu_select != 0);
 
 
+
+
+}
+
+
+void Menu::AddIngMenu_print() {
+
+
+	string name_t;
+	Ingredient* ing_t = new Ingredient;
+
+
+	system("cls");
+	cout << "== CocktailMix | Add Ingredient ==" << endl;
+	cout << "Name: ";
+	cin >> name_t;
+	ing_t->set_name(name_t);
+	cm->push_Ingredient(ing_t);
+	delete ing_t;
 
 
 }
