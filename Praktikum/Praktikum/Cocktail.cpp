@@ -31,14 +31,18 @@ vector<Ingredient> Cocktail::get_ingredients() {
 
 void Cocktail::print() {
 
+	int ms;
+
 	cout << "== Cocktail ==" << endl;
-	cout << name;
+	cout << name << endl;
 	
 	for (size_t i = 0; i < ingredients.size(); i++)
 	{
 		cout << "=> " << ingredients.at(i).get_name() << endl;
 	}
 
+	cout << "0 - Exit" << endl;
+	cin >> ms;
 }
 
 

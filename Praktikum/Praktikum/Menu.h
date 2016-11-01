@@ -12,8 +12,9 @@ class Menu
 	friend class CocktailMachine;
 
 public:
+	
 	Menu(CocktailMachine* cm_h);
-	~Menu();
+	//~Menu();
 	void Menu_print();
 	void MakeMenu_print();
 	void ConfigureMenu_print();

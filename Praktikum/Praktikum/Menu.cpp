@@ -47,7 +47,7 @@ void Menu::Menu_print() {
 
 			menu_select = -1;
 			MakeMenu_print();
-
+			menu_select = -1;
 			break;
 
 		case 2:
@@ -55,7 +55,7 @@ void Menu::Menu_print() {
 
 			menu_select = -1;
 			ConfigureMenu_print();
-
+			menu_select = -1;
 			break;
 
 		default:
@@ -77,26 +77,33 @@ void Menu::MakeMenu_print() {
 		system("cls");
 		cout << "== CocktailMix | Mix it ==" << endl;
 		
-
-		for (size_t i = 0; i < sizeof(cm->cocktails); i++)
+		
+		if (cm->cocktails.size() != 0)
 		{
-			cout << i++ << " - " << cm->cocktails.at(i)->get_name() << endl;
-		}
+			for (size_t i = 0; i < cm->cocktails.size(); i++)
+			{
+				int j = i + 1;
 
+				cout << j << " - " << cm->cocktails.at(i)->get_name() << endl;
+				
+			}
+		}
+		else {
+
+			cout << "No Cocktails" << endl;
+
+		}
+		
+		
 		cout << "0 - Exit " << endl;
 		cout << "Choice: ";
 		cin >> menu_select;
 		system("cls");
 		
-		if (menu_select < sizeof(cm->cocktails)) {
+		if (menu_select != 0) {
 
-			cout << "No Cocktail found!" << endl;
-
-		}
-		else {
-
-
-			cm->cocktails.at(menu_select)->print;
+			int j = menu_select - 1;
+			cm->cocktails.at(j)->print();
 
 
 		}
@@ -141,7 +148,7 @@ void Menu::ConfigureMenu_print() {
 
 			menu_select = -1;
 			DispenserMenu_print();
-
+			menu_select = -1;
 
 			break;
 

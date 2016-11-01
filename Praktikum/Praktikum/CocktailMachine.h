@@ -16,8 +16,8 @@ public:
 
 	//con and decon
 
-	CocktailMachine();
-	~CocktailMachine();
+	//CocktailMachine();
+	//~CocktailMachine();
 	
 	//setter
 	void set_dispensers(std::vector<Dispenser*>);
@@ -33,7 +33,7 @@ public:
 	void makeCocktail(int);
 	void printCocktails();
 	void printMenu();
-
+	void push_Cocktail(Cocktail*);
 
 	
 
