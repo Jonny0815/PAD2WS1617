@@ -1,11 +1,12 @@
-#pragma once
+#ifndef CocktailMachine_h
+#define CocktailMachine_h
+
 
 #include "Cocktail.h"
 #include "Ingredient.h"
 #include "Dispenser.h"
 
-#ifndef CocktailMachine_h
-#define CocktailMachine_h
+
 
 class CocktailMachine {
 
@@ -13,7 +14,7 @@ class CocktailMachine {
 
 public:
 
-	//dencon
+	//con and decon
 
 	CocktailMachine();
 	~CocktailMachine();

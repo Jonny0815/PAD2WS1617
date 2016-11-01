@@ -12,6 +12,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <algorithm>
 
 
 // TODO: reference additional headers your program requires here

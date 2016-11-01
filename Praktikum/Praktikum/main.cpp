@@ -9,16 +9,13 @@ using namespace std;
 
 int main()
 {
-	CocktailMachine cm;
-	CocktailMachine* cm_p = &cm;
+	
+	CocktailMachine* cm_p = new CocktailMachine;
 	
 	Menu menu(cm_p);
-	menu.print();
+	menu.Menu_print();
 
 	delete cm_p;
-	
-	
-	
 	
     return 0;
 }
