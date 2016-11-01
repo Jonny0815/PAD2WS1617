@@ -204,18 +204,7 @@ void Menu::DispenserMenu_print() {
 
 		if (menu_select > 0 && menu_select < 7) {
 
-			for (size_t i = 0; i < cm->ingredients.size(); i++)
-			{
-			cm->ingredients.at(i)->get_name();
-
-			}
-
-			cout << "0 - Exit " << endl;
-			menu_select = -1;
-			cout << "Choice: ";
-			cin >> menu_select;
-
-
+			//TODO
 
 		}
 		 
@@ -235,6 +224,7 @@ void Menu::DispenserMenu_print() {
 }
 
 
+
 void Menu::AddIngMenu_print() {
 
 
@@ -248,7 +238,7 @@ void Menu::AddIngMenu_print() {
 	cin >> name_t;
 	ing_t->set_name(name_t);
 	cm->push_Ingredient(ing_t);
-	delete ing_t;
+	
 
 
 }

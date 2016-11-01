@@ -19,24 +19,20 @@ public:
 	CocktailMachine();
 	~CocktailMachine();
 	
-	//setter
-	void set_dispensers(std::vector<Dispenser*>);
-	void set_cocktails(std::vector<Cocktail*>);
 
-	//getter
-	std::vector<Dispenser*> get_dispensers();
-	std::vector<Cocktail*> get_cocktails();
+
+	// pusher
+	void push_Cocktail(Cocktail*);
+	void push_Dispenser(Dispenser*);
+	void push_Ingredient(Ingredient*);
 
 
 	//wörk
 	void makeCocktail(Cocktail*);
 	void makeCocktail(int);
 	void printCocktails();
-	void printMenu();
-	void push_Cocktail(Cocktail*);
-	void push_Dispenser(Dispenser*);
-	void push_Ingredient(Ingredient*);
-
+	
+	
 	
 
 
