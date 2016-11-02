@@ -38,7 +38,7 @@ void Menu::Menu_print() {
 		case 0:
 
 			//close CocktailMix
-			write("CocktailMachine.bin", cm);
+			
 
 			break;
 
@@ -296,18 +296,3 @@ void Menu::AddIngMenu_print() {
 //save n load
 
 
-void Menu::write(const std::string& file_name, CocktailMachine* data) // Writes the given OBJECT data to the given file name.
-{
-	ofstream out;
-	out.open(file_name, std::ios::binary);
-	out.write(reinterpret_cast<char*>(&data), sizeof(CocktailMachine));
-	out.close();
-};
-
-void Menu::read(const std::string& file_name, CocktailMachine* data) // Reads the given file and assigns the data to the given OBJECT.
-{
-	ifstream in;
-	in.open(file_name, std::ios::binary);
-	in.read(reinterpret_cast<char*>(&data), sizeof(CocktailMachine));
-	in.close();
-};

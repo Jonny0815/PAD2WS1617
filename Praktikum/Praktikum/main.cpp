@@ -7,6 +7,10 @@
 
 using namespace std;
 
+
+
+
+
 int main()
 {
 	
@@ -34,10 +38,14 @@ int main()
 	c2->push_ingredient(*i3);
 	
 	
+
 	CocktailMachine* cm_p = new CocktailMachine;
 	
 	cm_p->push_Cocktail(c1);
 	cm_p->push_Cocktail(c2);
+
+
+	
 
 	Menu menu(cm_p);
 

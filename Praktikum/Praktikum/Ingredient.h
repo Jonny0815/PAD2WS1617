@@ -5,12 +5,19 @@
 
 using namespace std;
 
+
+
 class Ingredient 
 {
+
+
+
 public:
 	
 	string get_name();
 	void set_name(string);
+
+
 
 private:
 

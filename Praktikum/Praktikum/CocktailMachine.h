@@ -11,6 +11,7 @@
 class CocktailMachine { 
 
 	friend class Menu;
+	
 
 public:
 

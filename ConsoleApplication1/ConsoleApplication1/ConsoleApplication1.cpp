@@ -1,62 +1,79 @@
-#include<iostream>;
-#include <vector>;
-#include <fstream>;
-#include <string>;
+#include "stdafx.h"
+#include <atlbase.h>
+#include "xmllite.h"
+#include <strsafe.h>
 
-
-using namespace std;
-
-
-class Test { // The object to be serialized / deserialized
-public:
-
-	vector<string> stv;
-
-	
-};
-
-void write(const std::string& file_name, Test& data) // Writes the given OBJECT data to the given file name.
+int _tmain(int argc, _TCHAR* argv[])
 {
-	ofstream out;
-	out.open(file_name, std::ios::binary);
-	out.write(reinterpret_cast<char*>(&data), sizeof(Test));
-	out.close();
-};
-
-void read(const std::string& file_name, Test& data) // Reads the given file and assigns the data to the given OBJECT.
-{
-	ifstream in;
-	in.open(file_name, std::ios::binary);
-	in.read(reinterpret_cast<char*>(&data), sizeof(Test));
-	in.close();
-};
-
-int main() {
-
-	cout << "test" << endl;
-
-	Test t1;
-	string s1 = "s1";
-	string s2 = "s2";
-	string s3 = "s3";
-
-	t1.stv.push_back(s1);
-	t1.stv.push_back(s2);
-	t1.stv.push_back(s3);
+	HRESULT hr;
+	CComPtr<IStream> pFileStream;
+	CComPtr<IXmlReader> pReader;
+	XmlNodeType nodeType;
+	const WCHAR* pName;
+	const WCHAR* pValue;
 
 
-	write("file.bin", t1);
+	//Open XML document
+	if (FAILED(hr = SHCreateStreamOnFile(L"config.xml",
+		STGM_READ, &pFileStream)))
+	{
+		wprintf(L"Error opening XML document, error %08.8lx", hr);
+		return -1;
+	}
 
-	Test t2;
+	if (FAILED(hr = CreateXmlReader(__uuidof(IXmlReader),
+		(void**)&pReader, NULL)))
+	{
+		wprintf(L"Error creating XmlReader, error %08.8lx", hr);
+		return -1;
+	}
 
-	read("file.bin", t2);
+	if (FAILED(hr = pReader->SetInput(pFileStream)))
+	{
+		wprintf(L"Error setting input for XmlReader, error %08.8lx", hr);
+		return -1;
+	}
 
-	cout << t2.stv.at(0) << endl;
-	cout << t2.stv.at(1) << endl;
-	cout << t2.stv.at(2) << endl;
-
-	system("pause");
-
-
-
+	while (S_OK == (hr = pReader->Read(&nodeType)))
+	{
+		switch (nodeType)
+		{
+		case XmlNodeType_Element:
+			if (FAILED(hr = pReader->GetQualifiedName(&pName, NULL)))
+			{
+				wprintf(L"Error reading element name, error %08.8lx", hr);
+				return -1;
+			}
+			if (wcscmp(pName, L"key") == 0)
+			{
+				if (SUCCEEDED(hr =
+					pReader->MoveToAttributeByName(L"name", NULL)))
+				{
+					if (FAILED(hr = pReader->GetValue(&pValue, NULL)))
+					{
+						wprintf(L"Error reading attribute value, error %08.8lx", hr);
+						return -1;
+					}
+					if (wcscmp(pValue, L"foo") == 0)
+					{
+						//That's an element we are looking for
+						if (FAILED(hr =
+							pReader->MoveToAttributeByName(L"value", NULL)))
+						{
+							wprintf(L"Error reading attribute \"value\", error %08.8lx", hr);
+							return -1;
+						}
+						if (FAILED(hr = pReader->GetValue(&pValue, NULL)))
+						{
+							wprintf(L"Error reading attribute value, error %08.8lx", hr);
+							return -1;
+						}
+						wprintf(L"Key \"foo\"'s value is \"%s\"", pValue);
+					}
+				}
+			}
+			break;
+		}
+	}
+	return 0;
 }

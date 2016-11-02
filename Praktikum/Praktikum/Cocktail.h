@@ -7,6 +7,8 @@ class Cocktail
 {
 public:
 
+	
+
 	//setter
 	void set_name(std::string);
 	void set_ingredients(std::vector<Ingredient>);
@@ -19,6 +21,9 @@ public:
 	void print();
 	void push_ingredient(Ingredient);
 
+
+
+	
 
 private:
 
