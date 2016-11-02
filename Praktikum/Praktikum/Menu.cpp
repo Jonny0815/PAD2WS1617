@@ -204,16 +204,51 @@ void Menu::DispenserMenu_print() {
 
 		if (menu_select > 0 && menu_select < 7) {
 
-			for (size_t i = 0; i < cm->ingredients.size(); i++)
+			int mss = menu_select - 1;
+			int j;
+
+
+			if (cm->ingredients.size() != 0)
 			{
-			cm->ingredients.at(i)->get_name();
+
+				for (size_t i = 0; i < cm->ingredients.size(); i++)
+				{
+					j = i + 1;
+					cout << j << " - " << cm->ingredients.at(i)->get_name() << endl;
+
+				}
+			}
+			else {
+
+				cout << "No Ingredients" << endl;
 
 			}
 
-			cout << "0 - Exit " << endl;
-			menu_select = -1;
+			cout << "0 - Exit" << endl;
 			cout << "Choice: ";
+			menu_select = -1;
 			cin >> menu_select;
+			system("cls");
+
+			if (menu_select != 0 && menu_select <= cm->ingredients.size())
+			{
+				menu_select--;
+
+				cm->dispensers.at(mss)->set_ingredient(cm->ingredients.at(menu_select));
+
+				menu_select = -1;
+			}
+			else {
+
+				cout << "No such Ingredient " << menu_select << endl;
+				cout << "0 - Exit" << endl;
+				cout << "Choice: ";
+				menu_select = -1;
+				cin >> menu_select;
+
+
+
+			}
 
 			
 
@@ -235,6 +270,7 @@ void Menu::DispenserMenu_print() {
 }
 
 
+
 void Menu::AddIngMenu_print() {
 
 
@@ -248,7 +284,7 @@ void Menu::AddIngMenu_print() {
 	cin >> name_t;
 	ing_t->set_name(name_t);
 	cm->push_Ingredient(ing_t);
-	delete ing_t;
+	
 
 
 }

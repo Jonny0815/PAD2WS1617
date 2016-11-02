@@ -1,17 +1,20 @@
-#pragma once
-#include "stdafx.h"
 #ifndef Ingredient_h
 #define Ingredient_h
+#include "stdafx.h"
+
+
+using namespace std;
+
 class Ingredient 
 {
 public:
 	
-	std::string get_name();
-	void set_name(std::string);
+	string get_name();
+	void set_name(string);
 
 private:
 
-	std::string name;
+	string name;
 	
 };
 
