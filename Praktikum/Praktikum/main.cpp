@@ -40,6 +40,8 @@ int main()
 	cm_p->push_Cocktail(c2);
 
 	Menu menu(cm_p);
+
+
 	menu.Menu_print();
 
 	delete cm_p;

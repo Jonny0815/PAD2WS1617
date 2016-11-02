@@ -8,7 +8,7 @@
 
 
 
-class CocktailMachine {
+class CocktailMachine { 
 
 	friend class Menu;
 
@@ -18,6 +18,8 @@ public:
 
 	CocktailMachine();
 	~CocktailMachine();
+
+	
 	
 	//setter
 	void set_dispensers(std::vector<Dispenser*>);
@@ -38,7 +40,7 @@ public:
 	void push_Ingredient(Ingredient*);
 
 	
-
+	
 
 
 

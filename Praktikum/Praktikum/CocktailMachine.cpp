@@ -6,8 +6,15 @@
 
 using namespace std;
 
+
+
+
 CocktailMachine::CocktailMachine()
 {
+
+
+	
+
 
 	if (dispensers.size() != 6) {
 
@@ -30,6 +37,10 @@ CocktailMachine::~CocktailMachine()
 	
 	
 }
+
+
+
+
 
 void CocktailMachine::printCocktails() {
 
@@ -59,3 +70,4 @@ void CocktailMachine::push_Ingredient(Ingredient* i_g) {
 	ingredients.push_back(i_g);
 
 }
+

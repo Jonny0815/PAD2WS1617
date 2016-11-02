@@ -21,6 +21,11 @@ public:
 	void DispenserMenu_print();
 	void AddIngMenu_print();
 
+	// save n load
+
+	void write(const std::string&, CocktailMachine*);
+	void read(const std::string&, CocktailMachine*);
+
 private:
 	CocktailMachine* cm;
 	int menu_select = -1;
