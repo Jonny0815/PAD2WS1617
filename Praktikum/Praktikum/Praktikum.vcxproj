@@ -147,6 +147,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Downloads\tinyxml_2_6_2\tinyxml\tinyxml.h" />
     <ClInclude Include="Cocktail.h" />
     <ClInclude Include="CocktailMachine.h" />
     <ClInclude Include="Dispenser.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Downloads\tinyxml_2_6_2\tinyxml\tinyxml.cpp" />
     <ClCompile Include="Cocktail.cpp" />
     <ClCompile Include="CocktailMachine.cpp" />
     <ClCompile Include="Dispenser.cpp" />

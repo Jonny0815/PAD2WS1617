@@ -9,7 +9,7 @@ void Cocktail::set_name(string nam_h) {
 
 }
 
-void Cocktail::set_ingredients(vector<Ingredient> vinc) {
+void Cocktail::set_ingredients(vector<Ingredient*> vinc) {
 
 	ingredients = vinc;
 
@@ -23,7 +23,7 @@ string Cocktail::get_name() {
 
 }
 
-vector<Ingredient> Cocktail::get_ingredients() {
+vector<Ingredient*> Cocktail::get_ingredients() {
 
 	return ingredients;
 
@@ -38,7 +38,7 @@ void Cocktail::print() {
 	
 	for (size_t i = 0; i < ingredients.size(); i++)
 	{
-		cout << "=> " << ingredients.at(i).get_name() << endl;
+		cout << "=> " << ingredients.at(i)->get_name() << endl;
 	}
 
 	cout << "0 - Exit" << endl;
@@ -46,7 +46,7 @@ void Cocktail::print() {
 }
 
 
-void Cocktail::push_ingredient(Ingredient ing_h) {
+void Cocktail::push_ingredient(Ingredient* ing_h) {
 
 	ingredients.push_back(ing_h);
 

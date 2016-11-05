@@ -11,15 +11,15 @@ public:
 
 	//setter
 	void set_name(std::string);
-	void set_ingredients(std::vector<Ingredient>);
+	void set_ingredients(std::vector<Ingredient*>);
 
 	//getter
 	std::string get_name();
-	std::vector<Ingredient> get_ingredients();
+	std::vector<Ingredient*> get_ingredients();
 
 	//wörk
 	void print();
-	void push_ingredient(Ingredient);
+	void push_ingredient(Ingredient*);
 
 
 
@@ -28,7 +28,7 @@ public:
 private:
 
 	std::string name;
-	std::vector<Ingredient> ingredients;
+	std::vector<Ingredient*> ingredients;
 };
 
 #endif

@@ -43,46 +43,6 @@ CocktailMachine::~CocktailMachine()
 
 
 
-	/*
-	ofstream out_i;
-	out_i.open("Ingredients.bin", ios::binary | ios::out);
-	
-	for (size_t i = 0; i < ingredients.size(); i++)
-	{
-		out_i << ingredients.at(i)->get_name() << ";";
-	}
-	
-	out_i.close();
-
-	ofstream out_d;
-	out_d.open("Dispensers.bin", ios::binary | ios::out);
-
-	for (size_t i = 0; i < dispensers.size(); i++)
-	{
-		out_d << dispensers.at(i)->get_ingredient() << ";" << dispensers.at(i)->get_number() << endl;
-	}
-	
-	out_d.close();
-
-	ofstream out_c;
-	out_c.open("Cocktails.bin", ios::binary | ios::out);
-
-	for (size_t i = 0; i < cocktails.size(); i++)
-	{
-		out_c << cocktails.at(i)->get_name() << ";";
-
-			for (size_t j = 0; j < cocktails.at(i)->get_ingredients().size(); j++)
-			{
-				out_c << cocktails.at(i)->get_ingredients().at(j).get_name() << ";";
-			}
-
-			out_c << endl;
-	}
-	
-	out_c.close();
-
-	*/
-
 }
 
 

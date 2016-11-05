@@ -28,14 +28,14 @@ int main()
 	i2->set_name("Orange juice");
 	i3->set_name("Grenadine");
 
-	c1->push_ingredient(*i1);
-	c1->push_ingredient(*i2);
-	c1->push_ingredient(*i3);
+	c1->push_ingredient(i1);
+	c1->push_ingredient(i2);
+	c1->push_ingredient(i3);
 
 	c2->set_name("tq2");
-	c2->push_ingredient(*i1);
-	c2->push_ingredient(*i2);
-	c2->push_ingredient(*i3);
+	c2->push_ingredient(i1);
+	c2->push_ingredient(i2);
+	c2->push_ingredient(i3);
 	
 	
 
