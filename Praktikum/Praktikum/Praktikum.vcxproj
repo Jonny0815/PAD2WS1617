@@ -71,6 +71,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <ReferencePath>$(VC_ReferencesPath_x86);D:\Users\Jonny0815\Source\Repos\PAD2WS1617\Praktikum\Praktikum\tinyxml</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -84,7 +85,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -147,20 +148,24 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Downloads\tinyxml_2_6_2\tinyxml\tinyxml.h" />
     <ClInclude Include="Cocktail.h" />
     <ClInclude Include="CocktailMachine.h" />
     <ClInclude Include="Dispenser.h" />
+    <ClInclude Include="inc\tinystr.h" />
+    <ClInclude Include="inc\tinyxml.h" />
     <ClInclude Include="Ingredient.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Downloads\tinyxml_2_6_2\tinyxml\tinyxml.cpp" />
     <ClCompile Include="Cocktail.cpp" />
     <ClCompile Include="CocktailMachine.cpp" />
     <ClCompile Include="Dispenser.cpp" />
+    <ClCompile Include="inc\tinystr.cpp" />
+    <ClCompile Include="inc\tinyxml.cpp" />
+    <ClCompile Include="inc\tinyxmlerror.cpp" />
+    <ClCompile Include="inc\tinyxmlparser.cpp" />
     <ClCompile Include="Ingredient.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="main.cpp" />

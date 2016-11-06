@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<Hello>World
+
+<dispensers>
+        <0 number="1" ingredient="NULL" />
+        <1 number="2" ingredient="NULL" />
+        <2 number="3" ingredient="NULL" />
+        <3 number="4" ingredient="NULL" />
+        <4 number="5" ingredient="NULL" />
+        <5 number="6" ingredient="NULL" />
+    </dispensers>
+    <cocktails>
+        <0 name="Tequila Sunrise">
+            <0 ingredient="Tequila" />
+            <1 ingredient="Orange juice" />
+            <2 ingredient="Grenadine" />
+        </0>
+        <1 name="tq2">
+            <0 ingredient="Tequila" />
+            <1 ingredient="Orange juice" />
+            <2 ingredient="Grenadine" />
+        </1>
+    </cocktails>
+    <ingredients />
+
+
+
+
+</Hello>

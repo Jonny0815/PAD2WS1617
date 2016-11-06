@@ -3,6 +3,7 @@
 #include "stdafx.h"
 #include "CocktailMachine.h"
 #include "Menu.h"
+#include "inc\tinyxml.h"
 
 
 using namespace std;
@@ -14,8 +15,7 @@ using namespace std;
 int main()
 {
 	
-
-	
+/*
 	
 	Cocktail* c1 = new Cocktail;
 	Cocktail* c2 = new Cocktail;
@@ -37,14 +37,14 @@ int main()
 	c2->push_ingredient(i2);
 	c2->push_ingredient(i3);
 	
-	
+	*/
 
 	CocktailMachine* cm_p = new CocktailMachine;
 	
-	cm_p->push_Cocktail(c1);
-	cm_p->push_Cocktail(c2);
 
 
+	
+	
 	
 
 	Menu menu(cm_p);
@@ -54,6 +54,8 @@ int main()
 
 	delete cm_p;
 	
+
+
     return 0;
 }
 

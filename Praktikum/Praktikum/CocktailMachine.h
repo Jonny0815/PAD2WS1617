@@ -5,7 +5,7 @@
 #include "Cocktail.h"
 #include "Ingredient.h"
 #include "Dispenser.h"
-
+#include "stdafx.h"
 
 
 class CocktailMachine { 
@@ -20,7 +20,6 @@ public:
 	CocktailMachine();
 	~CocktailMachine();
 
-	
 	
 
 

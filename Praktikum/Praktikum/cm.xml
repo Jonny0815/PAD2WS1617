@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<CocktailMachine>
+    <dispensers>
+        <d0 number="1" ingredient="Tequila" />
+        <d1 number="2" ingredient="OrangeJuice" />
+        <d2 number="3" ingredient="Grenadine" />
+        <d3 number="4" ingredient="NULL" />
+        <d4 number="5" ingredient="NULL" />
+        <d5 number="6" ingredient="NULL" />
+    </dispensers>
+    <cocktails>
+        <c0 name="Tequila Sunrise">
+            <i0 ingredient="Tequila" />
+            <i1 ingredient="OrangeJuice" />
+            <i2 ingredient="Grenadine" />
+        </c0>
+        <c1 name="tq2">
+            <i0 ingredient="Tequila" />
+            <i1 ingredient="OrangeJuice" />
+            <i2 ingredient="Grenadine" />
+        </c1>
+    </cocktails>
+    <ingredients>
+        <i0 name="Tequila" />
+        <i1 name="OrangeJuice" />
+        <i2 name="Grenadine" />
+    </ingredients>
+</CocktailMachine>
