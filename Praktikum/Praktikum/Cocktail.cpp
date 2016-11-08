@@ -9,6 +9,8 @@ void Cocktail::set_name(string nam_h) {
 
 }
 
+
+
 void Cocktail::set_ingredients(vector<Ingredient*> vinc) {
 
 	ingredients = vinc;

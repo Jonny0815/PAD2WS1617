@@ -20,12 +20,10 @@ public:
 	void ConfigureMenu_print();
 	void DispenserMenu_print();
 	void AddIngMenu_print();
+	void AddCocMenu_print();
 	
 
-	// save n load
 
-	void write(const std::string&, CocktailMachine*);
-	void read(const std::string&, CocktailMachine*);
 
 private:
 	CocktailMachine* cm;

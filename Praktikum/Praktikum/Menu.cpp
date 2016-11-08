@@ -158,6 +158,14 @@ void Menu::ConfigureMenu_print() {
 
 			break;
 
+		case 3:
+
+
+			AddCocMenu_print();
+
+
+			break;
+
 		case 6:
 
 			AddIngMenu_print();
@@ -174,6 +182,74 @@ void Menu::ConfigureMenu_print() {
 
 }
 
+void Menu::AddCocMenu_print() {
+
+	string name;
+	string ingr;
+
+	Cocktail* newcock = new Cocktail;
+
+	cout << "== CocktailMix | Add Cocktail ==" << endl;
+	cout << "Name: ";
+	cin >> name;
+	newcock->set_name(name);
+	cout << endl << "Finish adding Cocktails by pressing ENTER" << endl;
+	
+	do {
+		cout << "Add Ingredient: ";
+		getline(cin, ingr);
+		if (ingr != "") {
+			for (size_t i = 0; i < cm->ingredients.size(); i++)
+			{
+				if (cm->ingredients.at(i)->get_name() == ingr)
+				{
+					newcock->push_ingredient(cm->ingredients.at(i));
+					cout << endl <<"Ingredient added!" << endl;
+				}
+				else {
+
+					char errorselect;
+					cout << "No ingredient with the name " << ingr << " found, do you want to create one ?" << endl << "(y/n)?" << endl;
+					cin >> errorselect;
+
+					switch (errorselect)
+					{
+					case 'y':
+
+						Ingredient* ingr_n = new Ingredient;
+						ingr_n->set_name(ingr);
+						cm->ingredients.push_back(ingr_n);
+						newcock->push_ingredient(ingr_n);
+						cout << endl << "New Ingredient created and added to your new Cocktail" << endl;
+
+						break;
+
+					case 'n':
+
+						cout << "Aborting Cocktail creation" << endl;
+						delete newcock;
+						return;
+						
+
+						break;
+
+					default:
+						break;
+					}
+
+				}
+			}
+
+
+
+		}
+	} while (ingr != "");
+
+
+
+	cm->cocktails.push_back(newcock);
+
+}
 
 void Menu::DispenserMenu_print() {  
 
