@@ -13,7 +13,7 @@ class Menu
 
 public:
 	
-	Menu(CocktailMachine* cm_h);
+	Menu(CMV* cm_h);
 	//~Menu();
 	void Menu_print();
 	void MakeMenu_print();
@@ -26,7 +26,7 @@ public:
 
 
 private:
-	CocktailMachine* cm;
+	CMV* cm;
 	int menu_select = -1;
 
 };

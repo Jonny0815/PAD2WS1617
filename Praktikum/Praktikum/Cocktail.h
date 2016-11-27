@@ -9,18 +9,17 @@ public:
 
 	
 
-	//setter
-	void set_name(std::string);
-	void set_ingredients(std::vector<Ingredient*>);
+	
 
 	//getter
 	std::string get_name();
 	std::vector<Ingredient*> get_ingredients();
+	std::vector<float> get_amount();
 
-	//wörk
-	void print();
+	//push and setter
 	void push_ingredient(Ingredient*);
-
+	void push_amount(float);
+	void set_name(string);
 
 
 	
@@ -29,6 +28,7 @@ private:
 
 	std::string name;
 	std::vector<Ingredient*> ingredients;
+	std::vector<float> amount;
 	
 };
 

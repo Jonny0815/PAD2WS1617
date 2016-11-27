@@ -3,19 +3,7 @@
 
 using namespace std;
 
-void Cocktail::set_name(string nam_h) {
 
-	name = nam_h;
-
-}
-
-
-
-void Cocktail::set_ingredients(vector<Ingredient*> vinc) {
-
-	ingredients = vinc;
-
-}
 
 string Cocktail::get_name() {
 
@@ -31,25 +19,27 @@ vector<Ingredient*> Cocktail::get_ingredients() {
 
 }
 
-void Cocktail::print() {
-
-	int ms;
-
-	cout << "== Cocktail ==" << endl;
-	cout << name << endl;
-	
-	for (size_t i = 0; i < ingredients.size(); i++)
-	{
-		cout << "=> " << ingredients.at(i)->get_name() << endl;
-	}
-
-	cout << "0 - Exit" << endl;
-	cin >> ms;
-}
-
 
 void Cocktail::push_ingredient(Ingredient* ing_h) {
 
 	ingredients.push_back(ing_h);
+
+}
+
+void Cocktail::push_amount(float f_h) {
+
+	amount.push_back(f_h);
+
+}
+
+vector<float> Cocktail::get_amount() {
+
+	return amount;
+
+}
+
+void Cocktail::set_name(string name_h) {
+
+	name = name_h;
 
 }

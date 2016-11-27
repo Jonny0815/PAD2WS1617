@@ -10,14 +10,14 @@
     </dispensers>
     <cocktails>
         <c0 name="Tequila Sunrise">
-            <i0 ingredient="Tequila" />
-            <i1 ingredient="OrangeJuice" />
-            <i2 ingredient="Grenadine" />
+            <i0 ingredient="Tequila" amount="40" />
+            <i1 ingredient="OrangeJuice" amount="240" />
+            <i2 ingredient="Grenadine" amount="20" />
         </c0>
         <c1 name="tq2">
-            <i0 ingredient="Tequila" />
-            <i1 ingredient="OrangeJuice" />
-            <i2 ingredient="Grenadine" />
+            <i0 ingredient="Tequila" amount="80" />
+            <i1 ingredient="OrangeJuice" amount="200" />
+            <i2 ingredient="Grenadine" amount="20" />
         </c1>
     </cocktails>
     <ingredients>
