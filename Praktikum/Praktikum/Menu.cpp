@@ -186,8 +186,9 @@ void Menu::AddCocMenu_print() {
 
 	string name;
 	string ingr;
-
+	char errorselect;
 	Cocktail* newcock = new Cocktail;
+	Ingredient* ingr_n = new Ingredient;
 
 	cout << "== CocktailMix | Add Cocktail ==" << endl;
 	cout << "Name: ";
@@ -208,7 +209,7 @@ void Menu::AddCocMenu_print() {
 				}
 				else {
 
-					char errorselect;
+					
 					cout << "No ingredient with the name " << ingr << " found, do you want to create one ?" << endl << "(y/n)?" << endl;
 					cin >> errorselect;
 
@@ -216,7 +217,7 @@ void Menu::AddCocMenu_print() {
 					{
 					case 'y':
 
-						Ingredient* ingr_n = new Ingredient;
+						
 						ingr_n->set_name(ingr);
 						cm->ingredients.push_back(ingr_n);
 						newcock->push_ingredient(ingr_n);

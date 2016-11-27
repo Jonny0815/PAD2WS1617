@@ -29,6 +29,7 @@ private:
 
 	std::string name;
 	std::vector<Ingredient*> ingredients;
+	
 };
 
 #endif
