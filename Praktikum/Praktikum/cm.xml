@@ -4,8 +4,8 @@
         <d0 number="1" ingredient="Tequila" />
         <d1 number="2" ingredient="OrangeJuice" />
         <d2 number="3" ingredient="Grenadine" />
-        <d3 number="4" ingredient="NULL" />
-        <d4 number="5" ingredient="NULL" />
+        <d3 number="4" ingredient="Whiskey" />
+        <d4 number="5" ingredient="Cola" />
         <d5 number="6" ingredient="NULL" />
     </dispensers>
     <cocktails>
@@ -23,6 +23,12 @@
             <i0 ingredient="Whiskey" amount="100" />
             <i1 ingredient="Cola" amount="200" />
         </c2>
+        <c3 name="LynchburgLemonade">
+            <i0 ingredient="Whiskey" amount="80" />
+            <i1 ingredient="Sprite" amount="100" />
+            <i2 ingredient="LimeJuice" amount="20" />
+            <i3 ingredient="Triplesec" amount="40" />
+        </c3>
     </cocktails>
     <ingredients>
         <i0 name="Tequila" />
