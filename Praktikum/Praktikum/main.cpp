@@ -17,19 +17,28 @@ using namespace std;
 int main()
 {
 
-
-	CMV* cm_p;
+	char select;
+	CMV* cm_p = NULL;
 
 	if (true) { //check for open com port to cocktailmachine here TODO
 
-		cm_p = new CocktailSimulator;
 
+		cout << "No Cocktailbot connected, continue with a Simulation ? (y/n)" << endl;
+		cin >> select;
+
+		if (select == 'y') {
+			cm_p = new CocktailSimulator;
+		}
 
 	}
 	else {
 
-		cm_p = new CocktailMachine;
+		cout << "Cocktailbot connected, continue with the real deal ? (y/n)" << endl;
+		cin >> select;
 
+		if (select == 'y') {
+			cm_p = new CocktailMachine;
+		}
 	}
 	
 	Menu menu(cm_p);

@@ -16,14 +16,15 @@ public:
 	unsigned int get_number();
 	Ingredient* get_ingredient();
 
-
+	//wörk
+	bool dispenser_active(Ingredient*, int, int);
 	
 
 private:
 
 	unsigned int number = 0;
 	Ingredient* ingredient = NULL;
-
+	
 };
 
 #endif

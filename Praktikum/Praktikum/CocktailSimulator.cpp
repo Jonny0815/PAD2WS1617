@@ -4,14 +4,18 @@
 void CocktailSimulator::makeCocktail(Cocktail* c_h) {
 
 	int ms;
+	int ingr_f = 0;
+	int amount_out = 0;
 
-	cout << "== Cocktail ==" << endl;
+	cout << "== Cocktail | Making Cocktail ==" << endl;
 	cout << c_h->get_name() << endl;
 
-	for (size_t i = 0; i < c_h->get_ingredients().size(); i++)
-	{
-		cout << "=> " << c_h->get_ingredients().at(i)->get_name() << " - "<< c_h->get_amount().at(i) << " ml" << endl;
-	}
+	
+	
+	
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+
+	
 
 	cout << "0 - Exit" << endl;
 	cin >> ms;

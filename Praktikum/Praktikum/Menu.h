@@ -21,6 +21,7 @@ public:
 	void DispenserMenu_print();
 	void AddIngMenu_print();
 	void AddCocMenu_print();
+	void ListCocMenu_print();
 	
 
 

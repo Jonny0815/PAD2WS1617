@@ -19,10 +19,19 @@
             <i1 ingredient="OrangeJuice" amount="200" />
             <i2 ingredient="Grenadine" amount="20" />
         </c1>
+        <c2 name="WhiskeyCola">
+            <i0 ingredient="Whiskey" amount="100" />
+            <i1 ingredient="Cola" amount="200" />
+        </c2>
     </cocktails>
     <ingredients>
         <i0 name="Tequila" />
         <i1 name="OrangeJuice" />
         <i2 name="Grenadine" />
+        <i3 name="Cola" />
+        <i4 name="Whiskey" />
+        <i5 name="Sprite" />
+        <i6 name="LimeJuice" />
+        <i7 name="Triplesec" />
     </ingredients>
 </CocktailMachine>

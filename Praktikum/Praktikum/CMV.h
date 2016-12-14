@@ -32,11 +32,12 @@ public:
 	//wörk
 	virtual void makeCocktail(Cocktail*) = 0;
 
-private:
+protected:
 
 	std::vector<Dispenser*> dispensers;
 	std::vector<Cocktail*> cocktails;
 	std::vector<Ingredient*> ingredients;
+	std::vector<bool> disp_active;
 
 
 };

@@ -6,15 +6,14 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	char test[10];
 
-	test[0] = 1;
+	string s1 = "test";
+	string s2 = "test";
 
-	cout << test[0] << endl;
-
-	int i = int(test[0]);
-
-	cout << i;
+	if (s1.c_str() == s2.c_str())
+	{
+		cout << "ok " << endl;
+	}
 
 
 

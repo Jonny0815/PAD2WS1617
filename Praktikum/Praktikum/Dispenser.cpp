@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Dispenser.h"
 
+
 using namespace std;
 
 void Dispenser::set_ingredient(Ingredient* ing_h) {
@@ -26,3 +27,28 @@ Ingredient* Dispenser::get_ingredient() {
 	return ingredient;
 }
 
+bool Dispenser::dispenser_active(Ingredient* ing, int amt, int amt_a) {
+
+	if (ingredient == ing)
+	{
+		if (amt < amt_a)
+		{
+			cout << "ON  | ";
+			return true;
+		}
+		else {
+
+			cout << "OFF | ";
+				return false;
+
+		}
+	}
+	else {
+
+		cout << "OFF | ";
+		return false;
+	}
+
+
+
+}
