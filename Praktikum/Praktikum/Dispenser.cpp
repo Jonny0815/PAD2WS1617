@@ -16,6 +16,12 @@ void Dispenser::set_number(int num_h) {
 
 }
 
+void Dispenser::set_active(bool act_h) {
+
+	active = act_h;
+
+}
+
 unsigned int Dispenser::get_number() {
 
 	return number;
@@ -27,28 +33,7 @@ Ingredient* Dispenser::get_ingredient() {
 	return ingredient;
 }
 
-bool Dispenser::dispenser_active(Ingredient* ing, int amt, int amt_a) {
+bool Dispenser::get_active() {
 
-	if (ingredient == ing)
-	{
-		if (amt < amt_a)
-		{
-			cout << "ON  | ";
-			return true;
-		}
-		else {
-
-			cout << "OFF | ";
-				return false;
-
-		}
-	}
-	else {
-
-		cout << "OFF | ";
-		return false;
-	}
-
-
-
+	return active;
 }
