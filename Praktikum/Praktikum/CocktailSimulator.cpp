@@ -24,18 +24,25 @@ void CocktailSimulator::makeCocktail(Cocktail* c_h) {
 			{
 				if (dispensers.at(i)->get_ingredient() == c_h->get_ingredients().at(j))
 				{
-					if (c_h->get_amount().at(j) > amount_out)
-					{
-						dispensers.at(i)->set_active(true);
-						//cout << "dispenser " << i << " set true" << endl;
-					}
-					else {
 
-						dispensers.at(i)->set_active(false);
-						//cout << "dispenser " << i << " set false" << endl;
+						
 
+						if (c_h->get_amount().at(j) > amount_out)
+						{
+							dispensers.at(i)->set_active(true);
+
+							
+
+							//cout << "dispenser " << i << " set true" << endl;
+						}
+						else {
+
+							dispensers.at(i)->set_active(false);
+							//cout << "dispenser " << i << " set false" << endl;
+
+						}
 					}
-				}
+				
 			}
 		}
 

@@ -16,3 +16,13 @@ string Ingredient::get_name() {
 	return name;
 
 }
+
+int Ingredient::get_dispensing() {
+	return dispensing;
+}
+
+void Ingredient::set_dispensing(int h_d) {
+
+	dispensing = h_d;
+
+}

@@ -37,3 +37,4 @@ bool Dispenser::get_active() {
 
 	return active;
 }
+
