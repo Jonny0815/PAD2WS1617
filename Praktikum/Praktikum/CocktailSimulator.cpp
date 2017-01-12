@@ -6,11 +6,15 @@ void CocktailSimulator::makeCocktail(Cocktail* c_h) {
 	int ms;
 	int amount_out = 0;
 	int all_disp_f = 0;
+	int output = 10;
+	
 
 	cout << "== Cocktail | Making Cocktail ==" << endl;
 	cout << "=> " << c_h->get_name() << endl << endl;
 	cout << "|  1  |  2  |  3  |  4  |  5  |  6  | ml" << endl;
 
+	
+	
 
 	while (all_disp_f != dispensers.size())
 	{
@@ -24,9 +28,12 @@ void CocktailSimulator::makeCocktail(Cocktail* c_h) {
 			{
 				if (dispensers.at(i)->get_ingredient() == c_h->get_ingredients().at(j))
 				{
-					if (c_h->get_amount().at(j) > amount_out)
+					if (c_h->get_amount().at(j) > c_h->get_amountout().at(j))
 					{
 						dispensers.at(i)->set_active(true);
+
+						c_h->ingr_out(ingredients.at(j), output);
+						
 						//cout << "dispenser " << i << " set true" << endl;
 					}
 					else {
@@ -63,12 +70,14 @@ void CocktailSimulator::makeCocktail(Cocktail* c_h) {
 			}
 		}
 
-		amount_out = amount_out + 10;
+		amount_out = amount_out + output;
 		cout << amount_out << endl;
 
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 		
 	}
+
+	
 
 	cout << "0 - Exit" << endl;
 	cin >> ms;

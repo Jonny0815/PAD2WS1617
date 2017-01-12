@@ -47,25 +47,70 @@ void Cocktail::set_name(string name_h) {
 bool Cocktail::check_disp(vector<Dispenser*> dispensers) {
 
 
-	int ingr_found = 0;
+	vector<int> found;
 
 	for (size_t i = 0; i < ingredients.size(); i++)
 	{
-		for (size_t j = 0; j < dispensers.size(); j++)
+		found.push_back(0);
+	}
+
+	for (size_t i = 0; i < dispensers.size(); i++)
+	{
+		for (size_t j = 0; j < ingredients.size(); j++)
 		{
-			if (ingredients.at(i) == dispensers.at(j)->get_ingredient()) {
-
-				ingr_found++;
-
+			if (dispensers.at(i)->get_ingredient() == ingredients.at(j))
+			{
+				found.at(j)++;
 			}
 		}
-		
 	}
 
-	if (ingr_found == ingredients.size())
+
+	for (size_t i = 0; i < ingredients.size(); i++)
 	{
-		return true;
+		if (found.at(i) == 0)
+		{
+			return false;
+		}
+	}
+	return true;
+
+
+}
+
+
+
+void Cocktail::ingr_out(Ingredient* ingr, float amount) {
+
+	for (size_t i = 0; i < ingredients.size(); i++)
+	{
+		if (ingredients.at(i) == ingr)
+		{
+			amountout.at(i) = amountout.at(i) + amount;
+		}
 	}
 
+
+
+}
+
+vector<float> Cocktail::get_amountout() {
+
+
+	if (amountout.size() == 0)
+	{
+		for (size_t i = 0; i < ingredients.size(); i++)
+		{
+			amountout.push_back(0);
+		}
+	}
+
+	return amountout;
+
+}
+
+void Cocktail::cleanup() {
+
+	amountout.clear();
 
 }

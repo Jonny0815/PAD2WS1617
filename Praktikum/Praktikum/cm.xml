@@ -6,7 +6,7 @@
         <d2 number="3" ingredient="Grenadine" />
         <d3 number="4" ingredient="Whiskey" />
         <d4 number="5" ingredient="Cola" />
-        <d5 number="6" ingredient="NULL" />
+        <d5 number="6" ingredient="OrangeJuice" />
     </dispensers>
     <cocktails>
         <c0 name="Tequila Sunrise">
