@@ -6,6 +6,7 @@
 #include "CocktailSimulator.h"
 #include "Menu.h"
 #include "inc\tinyxml.h"
+#include	 "DispenserApi.h"
 
 
 using namespace std;
@@ -20,26 +21,26 @@ int main()
 	char select;
 	CMV* cm_p = NULL;
 
-	if (true) { //check for open com port to cocktailmachine here TODO
+	cout << "Select Mode:" << endl;
+	cout << "1. Simulator" << endl;
+	cout << "2. Real Deal" << endl;
+	cin >> select;
 
+	switch (select)
+	{
 
-		cout << "No Cocktailbot connected, continue with a Simulation ? (y/n)" << endl;
-		cin >> select;
+	case 1: cm_p = new CocktailSimulator;
+		break;
+	case 2: cm_p = new CocktailMachine;
+		break;
 
-		if (select == 'y') {
-			cm_p = new CocktailSimulator;
-		}
-
+	default:
+		break;
 	}
-	else {
+			
+	system("cls");
+			
 
-		cout << "Cocktailbot connected, continue with the real deal ? (y/n)" << endl;
-		cin >> select;
-
-		if (select == 'y') {
-			cm_p = new CocktailMachine;
-		}
-	}
 	
 	Menu menu(cm_p);
 	menu.Menu_print();
