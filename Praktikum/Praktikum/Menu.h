@@ -22,7 +22,7 @@ public:
 	void AddIngMenu_print();
 	void AddCocMenu_print();
 	void ListCocMenu_print();
-	void ListIngMenu_print();
+	
 
 
 
