@@ -39,5 +39,6 @@
         <i5 name="Sprite" />
         <i6 name="LimeJuice" />
         <i7 name="Triplesec" />
+        <i8 name="Fanta" />
     </ingredients>
 </CocktailMachine>

@@ -271,6 +271,22 @@ CMV::~CMV()
 	doc.SaveFile("CM.xml");
 	doc.Clear();
 
+
+
+
+	for (size_t i = 0; i < ingredients.size(); i++)
+	{
+		delete ingredients.at(i);
+	}
+
+	for (size_t i = 0; i < dispensers.size(); i++)
+	{
+		delete dispensers.at(i);
+	}
+	for (size_t i = 0; i < cocktails.size(); i++)
+	{
+		delete cocktails.at(i);
+	}
 }
 
 

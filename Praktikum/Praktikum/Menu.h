@@ -23,6 +23,8 @@ public:
 	void AddCocMenu_print();
 	void ListCocMenu_print();
 	void ListIngMenu_print();
+	void DelIngMenu_print();
+	void DelCocMenu_print();
 
 
 

@@ -134,11 +134,10 @@ void Menu::ConfigureMenu_print() {
 		cout << "1 - Configure Dispensers" << endl;
 		cout << "2 - List Cocktails" << endl;
 		cout << "3 - Add Cocktail" << endl;
-		cout << "4 - Edit Cocktail" << endl;
-		cout << "5 - Delete Cocktail" << endl;
-		cout << "6 - Add Ingredient" << endl;
-		cout << "7 - Delete Ingredient" << endl;
-		cout << "8 - List Ingredients" << endl;
+		cout << "4 - Delete Cocktail" << endl;
+		cout << "5 - Add Ingredient" << endl;
+		cout << "6 - Delete Ingredient" << endl;
+		cout << "7 - List Ingredients" << endl;
 		cout << "0 - Exit " << endl;
 		cout << "Choice: ";
 		cin >> menu_select;
@@ -161,30 +160,47 @@ void Menu::ConfigureMenu_print() {
 			break;
 
 		case 2:
-
+			menu_select = -1;
 			ListCocMenu_print();
-
+			menu_select = -1;
 			break;
 
 		case 3:
 
-
+			menu_select = -1;
 			AddCocMenu_print();
+			menu_select = -1;
+
+			break;
 
 
+
+		case 4:
+			menu_select = -1;
+			DelCocMenu_print();
+			menu_select = -1;
+
+			break;
+
+
+
+		case 5:
+			menu_select = -1;
+			AddIngMenu_print();
+			menu_select = -1;
 			break;
 
 		case 6:
+			menu_select = -1;
+			DelIngMenu_print();
+			menu_select = -1;
+				break;
 
-			AddIngMenu_print();
 
-			break;
-
-
-		case 8:
-
+		case 7:
+			menu_select = -1;
 			ListIngMenu_print();
-
+			menu_select = -1;
 		default:
 			break;
 		}
@@ -197,9 +213,49 @@ void Menu::ConfigureMenu_print() {
 
 void Menu::AddCocMenu_print() {
 
-	//TODO
+	string name;
+	float amount;
+	Cocktail *c_n = new Cocktail;
 
+	system("cls");
+	cout << "== CocktailMix | Add Cocktail ==" << endl;
+	cout << "Name: ";
+	cin >> name;
+	c_n->set_name(name);
+	cout << "Select Ingredients: " << endl;
+	
+
+	
+	for (size_t i = 0; i < cm->ingredients.size(); i++)
+	{
+		size_t j = i + 1;
+
+		cout << j << " => " << cm->ingredients.at(i)->get_name() << endl;
+	}
+	cout << "0 - Finish adding Ingredients" << endl;
+
+	while (menu_select != 0)
+	{
+		
+		cout << "Choice: ";
+		cin >> menu_select;
+
+		if (menu_select != 0)
+		{
+			c_n->push_ingredient(cm->ingredients.at(menu_select - 1));
+			cout << "Ingredient added, insert amount: ";
+			cin >> amount;
+			c_n->push_amount(amount);
+	}
+
+	}
+
+	cm->cocktails.push_back(c_n);
+	
 }
+
+
+
 
 void Menu::DispenserMenu_print() {  
 
@@ -311,26 +367,194 @@ void Menu::DispenserMenu_print() {
 void Menu::AddIngMenu_print() {
 
 
-//TODO
+	system("cls");
+
+	Ingredient *ing_n = new Ingredient;
+
+	cout << "== CocktailMix | Add Ingredient ==" << endl;
+	cout << "1 - Add" << endl;
+	if (cm->ingredients.size() != 0)
+	{
+		for (size_t i = 0; i < cm->ingredients.size(); i++)
+		{
+			size_t j = i + 2;
+			cout << j << " => " << cm->ingredients.at(i)->get_name() << endl;
+		}
+
+
+
+	}
+
+	else {
+
+		cout << "No Ingredients" << endl;
+		ConfigureMenu_print();
+
+	}
+	cout << "0 - Exit" << endl;
+	cout << "Choice: ";
+	cin >> menu_select;
+	if (menu_select == 0)
+	{
+		menu_select = -1;
+	}
+	else if (menu_select == 1)
+	{
+		string add = "";
+		cout << "Please enter an ingredient to add:  ";
+		cin >> add;
+		ing_n->set_name(add);
+		cm->ingredients.push_back(ing_n);
+		menu_select = -1;
+		
+
+	}
 	
 
 
 }
 
 
+void Menu::DelIngMenu_print()
+{
+	system("cls");
+	menu_select = -1;
+	cout << "== CocktailMix | Delete Ingredient ==" << endl;
+	if (cm->ingredients.size() != 0)
+	{
+		for (size_t i = 0; i < cm->ingredients.size(); i++)
+		{
+			size_t j = i + 1;
+			cout << j << " => " << cm->ingredients.at(i)->get_name() << endl;
+		}
+		cout << "0 - Exit" << endl;
+		cout << "Choice: ";
+		cin >> menu_select;
+
+		if (menu_select == 0)
+		{
+			system("cls");
+			menu_select = -1;
+			
+		}
+		else if (menu_select <= cm->ingredients.size() + 1)
+		{
+			cm->ingredients.erase(cm->ingredients.begin() + menu_select-1);
+			system("cls");
+			menu_select = -1;
+		}
+		
+
+
+	}
+
+	else {
+
+		cout << "No Ingredients" << endl;
+		
+
+	}
+}
+
+
 void Menu::ListCocMenu_print() {
 
 
-	//TODO
+	system("cls");
+	cout << "== CocktailMix | List Cocktails ==" << endl;
+	if (cm->cocktails.size() != 0)
+	{
+		for (size_t i = 0; i < cm->cocktails.size(); i++)
+		{
+			size_t j = i + 1;
+
+
+			cout << j << " => " << cm->cocktails.at(i)->get_name() << endl;
+		}
+
+		cout << "0 - Exit" << endl;
+		cout << "Choice: ";
+		cin >> menu_select;
+		
+
+	}
+	else {
+
+		cout << "No Cocktails" << endl;
+		ConfigureMenu_print();
+
+	}
 
 }
 
 
+void Menu::DelCocMenu_print() {
 
+	system("cls");
+	menu_select = -1;
+	cout << "== CocktailMix | Delete Ingredient ==" << endl;
+	if (cm->cocktails.size() != 0)
+	{
+		for (size_t i = 0; i < cm->cocktails.size(); i++)
+		{
+			size_t j = i + 1;
+			cout << j << " => " << cm->cocktails.at(i)->get_name() << endl;
+		}
+		cout << "0 - Exit" << endl;
+		cout << "Choice: ";
+		cin >> menu_select;
+
+		if (menu_select == 0)
+		{
+			system("cls");
+			menu_select = -1;
+			
+		}
+		else if (menu_select <= cm->cocktails.size() + 1)
+		{
+			cm->cocktails.erase(cm->cocktails.begin() + menu_select - 1);
+			system("cls");
+			menu_select = -1;
+			
+		}
+		
+
+
+	}
+
+	else {
+
+		cout << "No Ingredients" << endl;
+		ConfigureMenu_print();
+
+	}
+
+}
 
 
 void Menu::ListIngMenu_print() {
 
-	//TODO
+	system("cls");
+	cout << "== CocktailMix | List Ingredients ==" << endl;
+	if (cm->ingredients.size() != 0)
+	{
+		for (size_t i = 0; i < cm->ingredients.size(); i++)
+		{
+			size_t j = i + 1;
+
+			cout << j << " => " << cm->ingredients.at(i)->get_name() << endl;
+		}
+		cout << "0 - Exit" << endl;
+		cout << "Choice: ";
+		cin >> menu_select;
+		
+
+	}
+	else {
+
+		cout << "No Ingredients" << endl;
+		ConfigureMenu_print();
+
+	}
 
 }

@@ -51,9 +51,6 @@
     <ClInclude Include="CocktailSimulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DispenserApi.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -93,9 +90,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CocktailSimulator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DispenserApi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
