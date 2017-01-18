@@ -66,30 +66,13 @@ using namespace std;
 				if (dispensers.at(i)->get_active() == true)
 				{
 					cout << "ON  | ";
-					if (!DispenserApi::SetDispenser(i, DispenserStatus::On)) {
-						cout << "ERROR" << endl;
-
-						DispenserApi::SetAllDispensers(DispenserStatus::Off);
-						DispenserApi::Cleanup();
-
-
-						return;
-					}
+					DispenserApi::SetDispenser(i, DispenserStatus::On);
 				}
 
 				if (dispensers.at(i)->get_active() == false)
 				{
 					cout << "OFF | ";
-					if (!DispenserApi::SetDispenser(i, DispenserStatus::Off))
-					{
-						cout << "ERROR" << endl;
-
-						DispenserApi::SetAllDispensers(DispenserStatus::Off);
-						DispenserApi::Cleanup();
-
-						return;
-
-					}
+					DispenserApi::SetDispenser(i, DispenserStatus::Off);
 				}
 			}
 
