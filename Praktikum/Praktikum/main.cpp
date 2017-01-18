@@ -18,7 +18,7 @@ using namespace std;
 int main()
 {
 
-	char select;
+	int select;
 	CMV* cm_p = NULL;
 
 	cout << "Select Mode:" << endl;
