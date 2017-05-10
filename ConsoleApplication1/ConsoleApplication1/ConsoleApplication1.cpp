@@ -1,50 +1,21 @@
-#include "stdafx.h"
+#include "inc\tinyxml.h"
 #include <iostream>
 #include <string>
-#include <vector>
-
 
 using namespace std;
 
-int main()
- {
+int main(int argc, char* argv[])
+{
 
-	vector<int> v1(3, 1);
-	vector<int> v2(3, -1);
+	string s1 = "test";
+	string s2 = "test";
 
-	v2.push_back(3);
-	v2.pop_back();
-
-
-
-	for (size_t i = 0; i < v2.size(); i++)
+	if (s1.c_str() == s2.c_str())
 	{
-		cout << "index " << i << "=> " << v2[i] << endl;
-	}
-	
-	cout << "Empty => " << v2.empty() << endl;
-	cout << "Max_Size => " << v2.max_size() << endl;
-	cout << "Size => " << v2.size() << endl;
-
-
-
-	v2.insert(v2.end(), v1.begin(), v1.end());
-
-
-
-	cout << "----------------------------" << endl;
-	for (size_t i = 0; i < v2.size(); i++)
-	{
-		cout << "index " << i << "=> " << v2[i] << endl;
+		cout << "ok " << endl;
 	}
 
-	cout << "Empty => " << v2.empty() << endl;
-	cout << "Max_Size => " << v2.max_size() << endl;
-	cout << "Size => " << v2.size() << endl;
 
 
 	return 0;
-
-
-
 }

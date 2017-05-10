@@ -11,5 +11,13 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
+#include "inc\tinyxml.h"
+#include <thread>
+#include <chrono>
+#include <stdlib.h>
+
+
+
 
 // TODO: reference additional headers your program requires here

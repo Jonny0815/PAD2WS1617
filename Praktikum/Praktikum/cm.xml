@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<CocktailMachine>
+    <dispensers>
+        <d0 number="1" ingredient="Tequila" />
+        <d1 number="2" ingredient="OrangeJuice" />
+        <d2 number="3" ingredient="Grenadine" />
+        <d3 number="4" ingredient="Whiskey" />
+        <d4 number="5" ingredient="Cola" />
+        <d5 number="6" ingredient="OrangeJuice" />
+    </dispensers>
+    <cocktails>
+        <c0 name="Tequila Sunrise">
+            <i0 ingredient="Tequila" amount="40" />
+            <i1 ingredient="OrangeJuice" amount="240" />
+            <i2 ingredient="Grenadine" amount="20" />
+        </c0>
+        <c1 name="tq2">
+            <i0 ingredient="Tequila" amount="80" />
+            <i1 ingredient="OrangeJuice" amount="200" />
+            <i2 ingredient="Grenadine" amount="20" />
+        </c1>
+        <c2 name="WhiskeyCola">
+            <i0 ingredient="Whiskey" amount="100" />
+            <i1 ingredient="Cola" amount="200" />
+        </c2>
+        <c3 name="LynchburgLemonade">
+            <i0 ingredient="Whiskey" amount="80" />
+            <i1 ingredient="Sprite" amount="100" />
+            <i2 ingredient="LimeJuice" amount="20" />
+            <i3 ingredient="Triplesec" amount="40" />
+        </c3>
+    </cocktails>
+    <ingredients>
+        <i0 name="Tequila" />
+        <i1 name="OrangeJuice" />
+        <i2 name="Grenadine" />
+        <i3 name="Cola" />
+        <i4 name="Whiskey" />
+        <i5 name="Sprite" />
+        <i6 name="LimeJuice" />
+        <i7 name="Triplesec" />
+        <i8 name="Fanta" />
+    </ingredients>
+</CocktailMachine>
